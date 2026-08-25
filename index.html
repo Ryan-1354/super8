@@ -102,7 +102,9 @@ body{
 }
 .sidenav .brand{display:flex; flex-direction:column; gap:6px;}
 .sidenav .brand .kicker{color:var(--text-muted);}
-.sidenav .brand .name{font-family:var(--font-serif); font-size:var(--fs-card-heading); line-height:var(--lh-card-heading);}
+.sidenav .brand .name{font-family:var(--font-serif); font-size:var(--fs-card-heading); line-height:var(--lh-card-heading); color:var(--text-primary); text-decoration:none; cursor:pointer; transition:color .15s ease;}
+.sidenav .brand .name:hover{color:var(--text-accent);}
+.sidenav .brand .author{color:var(--text-secondary);}
 .nav-group{color:var(--text-muted); margin-bottom:8px; padding:0 12px;}
 .nav-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2px;}
 .nav-list a{
@@ -340,7 +342,8 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:40px 0;}
   <nav class="sidenav" aria-label="頁面導覽">
     <div class="brand">
       <span class="kicker t-label">Super 8 Studio · Product Designer</span>
-      <span class="name">Super8 Assignment</span>
+      <a class="name" href="#top">Super8 Assignment</a>
+      <span class="author t-small">Ryan Wu</span>
     </div>
     <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navScroll">目錄</button>
     <div class="nav-scroll" id="navScroll">
@@ -358,7 +361,7 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:40px 0;}
   <main class="main">
 
     <!-- ---------- Hero / Metadata ---------- -->
-    <header class="hero">
+    <header class="hero" id="top">
       <h1 class="t-hero">如果要讓使用者更容易開始一個任務，你會改善什麼？</h1>
       <p class="lead t-body">觀察對象：Claude.ai 網頁版（desktop web），登入後 Chat 頁面。作業內容涵蓋 Problem Framing、Design Proposal 與 AI Collaboration 三大部分，本次選擇以網站形式呈現。</p>
 
