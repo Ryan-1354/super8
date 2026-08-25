@@ -413,38 +413,33 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:40px 0;}
       <div class="table-scroll">
         <table>
           <thead>
-            <tr><th>ChatGPT</th><th>Gemini</th><th>Claude</th><th>Grok</th></tr>
+            <tr><th>ChatGPT</th><th>Gemini</th><th>Claude</th></tr>
           </thead>
           <tbody>
             <tr>
               <td>空白聊天框讓人不知道從哪開始（blank canvas problem）</td>
               <td>空白輸入框癱瘓、起手難度高（Blank Canvas Syndrome）</td>
               <td>空白輸入框＝空白畫布焦慮（The Blank Prompt Problem）</td>
-              <td>空白提示框造成的「開始障礙」</td>
             </tr>
             <tr>
               <td>知道要做什麼但不知道怎麼 prompt</td>
               <td>上下文斷裂、強迫開新對話循環</td>
               <td>能力不夠可被發現（less discoverable capabilities）</td>
-              <td>建議 prompt 不夠有用或干擾</td>
             </tr>
             <tr>
               <td>不知道 Claude 能為自己的工作做什麼</td>
               <td>Projects 與記憶機制入口太深</td>
               <td>沒有可重複使用的 prompt 起點</td>
-              <td>缺乏可重用的起點／Prompt 庫</td>
             </tr>
             <tr>
               <td>開始前被 signup／pricing／desktop app 流程打斷</td>
               <td>多檔案／多素材啟動前置步驟繁瑣</td>
               <td>切換模型會開新對話，打斷任務</td>
-              <td>任務導向入口不足</td>
             </tr>
             <tr>
               <td>功能越來越多，不知道從 Chat、Projects、Artifacts 哪個入口開始</td>
               <td>—</td>
               <td>Returning user 沒有明確的接續入口</td>
-              <td>開新對話與延續任務的摩擦</td>
             </tr>
           </tbody>
         </table>
@@ -476,14 +471,12 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:40px 0;}
           <span class="token-pill">問題 1</span>
           <p class="t-heading" style="margin-top:12px;">Chat Interface 沒有將 Project 核心功能——即讓回訪使用者延續工作——體現給使用者</p>
           <p class="t-small"><strong>為什麼優先：</strong>Project 延續工作的能力本來就存在，只是被埋沒、沒有被凸顯成使用者一眼就能感知的體驗；解法可以很輕量，不需重做整個首頁資訊架構</p>
-          <p class="t-small"><strong>排除但觀察到的：</strong>first-time user 的冷啟動引導（無行為訊號可用，額外提問本身就是摩擦，與本題目標衝突，刻意不展開）；自由輸入自動生成 prompt 的功能（會增加一次 AI 生成往返延遲，且與「不做語意判斷」的設計原則衝突）</p>
         </div>
         <div class="card">
           <span class="token-pill">問題 2</span>
           <p class="t-heading" style="margin-top:12px;">Side panel 功能繁多且資訊架構複雜，增加使用者認知負荷</p>
           <p class="t-small"><strong>具體現象：</strong>Projects 重複出現兩種角色；Projects/Artifacts/Scheduled（跨模式共用管理工具）與 Design/Code（獨立產品線）視覺上毫無區隔</p>
           <p class="t-small"><strong>為什麼優先：</strong>改動範圍小（僅視覺分組＋入口整併），不需重新設計整個 Sidebar 資料模型</p>
-          <p class="t-small"><strong>排除但觀察到的：</strong>Chat/Cowork 從 composer 內部提升到 Sidebar 外部第一層——範圍過大，且會製造新的「先選模式才能輸入」摩擦，與本題目標（更快開始）衝突，決定不做</p>
         </div>
       </div>
 
