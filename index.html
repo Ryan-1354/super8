@@ -200,7 +200,7 @@ ol.steps > li::before{
   transition:background .15s ease;
 }
 .figma-btn:hover{background:var(--fill-accent-hover);}
-.figma-btn .ico{width:14px; height:14px; display:inline-block;}
+.figma-btn .ico{width:14px; height:14px; display:inline-block; object-fit:contain; flex:0 0 auto;}
 .figma-list{list-style:none; margin:20px 0; padding:0; display:flex; flex-direction:column; gap:1px; background:var(--border); border:1px solid var(--border); border-radius:var(--radius-card); overflow:hidden;}
 .figma-list li{
   background:var(--surface-2);
@@ -550,7 +550,7 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:40px 0;}
         <a class="frame" href="https://www.figma.com/design/gBdJlyEcW9GNYL4Urf5Zmc/Assignment?node-id=49-1840&t=znqStOemTebuqfZd-1" target="_blank" rel="noopener">
           <img src="assets/core-ui.png" alt="claude.ai 首頁 Redesign Mockup：Sidebar 分組整併，主畫面上方加入「延續工作」卡片列，下方保留通用 chips">
         </a>
-        <figcaption><span class="cap t-body">首頁 Redesign Mockup · core UI</span><a class="figma-btn" href="https://www.figma.com/design/gBdJlyEcW9GNYL4Urf5Zmc/Assignment?node-id=49-1840&t=znqStOemTebuqfZd-1" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">◈</span>查看 Figma</a></figcaption>
+        <figcaption><span class="cap t-body">首頁 Redesign Mockup · core UI</span><a class="figma-btn" href="https://www.figma.com/design/gBdJlyEcW9GNYL4Urf5Zmc/Assignment?node-id=49-1840&t=znqStOemTebuqfZd-1" target="_blank" rel="noopener"><img class="ico" src="assets/figma_original.svg" alt="" aria-hidden="true" width="14" height="14">查看 Figma</a></figcaption>
       </figure>
 
       <p class="sub t-heading" style="margin-bottom:0;">Before / After Flow Chart</p>
@@ -558,45 +558,8 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:40px 0;}
         <a class="frame" href="https://www.figma.com/board/4iiDqI47Yi5BGPhb3rloxF/super8?node-id=20-701&t=2xH6dvYUVHNuIrm4-1" target="_blank" rel="noopener">
           <img src="assets/flow-before-after.png" alt="加入延續工作卡的 Before / After 流程圖：Before 需多層點擊尋找對話，After 由首頁延續工作卡片直接接續">
         </a>
-        <figcaption><span class="cap t-body">加入延續工作卡 · Before / After Flow Chart</span><a class="figma-btn" href="https://www.figma.com/board/4iiDqI47Yi5BGPhb3rloxF/super8?node-id=20-701&t=2xH6dvYUVHNuIrm4-1" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">◈</span>查看 Figma</a></figcaption>
+        <figcaption><span class="cap t-body">加入延續工作卡 · Before / After Flow Chart</span><a class="figma-btn" href="https://www.figma.com/board/4iiDqI47Yi5BGPhb3rloxF/super8?node-id=20-701&t=2xH6dvYUVHNuIrm4-1" target="_blank" rel="noopener"><img class="ico" src="assets/figma_original.svg" alt="" aria-hidden="true" width="14" height="14">查看 Figma</a></figcaption>
       </figure>
-      <p class="fig-note t-small">文字版（供對照，正式素材以上方 Figma 連結為準）</p>
-      <div class="flow-wrap">
-        <div class="flow before">
-          <span class="t-label">Before</span>
-<pre>使用者打開 claude.ai
-
-  → 看到「Afternoon, Ryan」
-    + 空輸入框 + 五個通用 chips
-
-  → 若有未完成任務，需自行點開
-    Sidebar 對話列表尋找
-
-  → 多一層操作才能接續</pre>
-        </div>
-        <div class="flow after">
-          <span class="t-label">After</span>
-<pre>使用者打開 claude.ai
-
-  → 看到「Afternoon, Ryan」
-
-  → 若 48 小時內有活動紀錄：
-    顯示「延續工作」卡片區塊
-    （最多 2 則，依最後活動時間排序）
-
-  → 直接點擊卡片即可接續該對話
-
-  → 若無近期活動：維持現況通用 chips，
-    標示為「Or start something new」</pre>
-        </div>
-      </div>
-
-      <p class="sub t-heading" style="margin-bottom:0;">設計取捨（需在頁面上明確標註，作為判斷力展示）</p>
-      <ul class="tradeoff">
-        <li>卡片標題直接複用 Sidebar 既有對話標題，不另外呼叫 AI 生成摘要 —— 避免額外生成延遲，維持「更快開始」的目標一致性</li>
-        <li>上限 2 則，非任意訂定的規則，理由是控制視覺份量、避免與下方 chips 搶視覺主導權</li>
-        <li>不處理 first-time user（無歷史行為訊號可用，刻意排除，詳見 2.2）</li>
-      </ul>
 
       <div class="card-grid">
         <div class="card">
@@ -605,7 +568,7 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:40px 0;}
         </div>
         <div class="card">
           <p class="t-heading">為什麼用時間排序、不用語意判斷？</p>
-          <p class="t-small">a. 若改用語意判斷「這個任務是否已完成」，代表每次使用者打開首頁，系統都要重新爬過所有對話並跑一次推論——每一次都是一次額外的網路請求與推論時間，與「更容易開始一個任務」這個前提直接相違背。 b. 判斷「任務是否未完成」的依據本身需要更具體的釐清（例如使用者道謝可能代表任務結束，也可能只是階段性道謝），目前沒有可靠、不易誤判的判準，貿然導入語意判斷風險大於效益。</p>
+          <p class="t-small">若改用語意判斷「這個任務是否已完成」，代表每次使用者打開首頁，系統都要重新爬過所有對話並跑一次推論——每一次都是一次額外的網路請求與推論時間，與「更容易開始一個任務」這個前提直接相違背。</p>
         </div>
         <div class="card">
           <p class="t-heading">為什麼不分一般 Chat 還是 Project 內的 Chat？</p>
@@ -629,55 +592,16 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:40px 0;}
         <a class="frame" href="https://www.figma.com/design/gBdJlyEcW9GNYL4Urf5Zmc/Assignment?node-id=29-336&t=znqStOemTebuqfZd-1&view=variables" target="_blank" rel="noopener">
           <img src="assets/design-token-reference.png" alt="Figma Variables 面板：system 層 color token 對應 primitive（fill-brand→coral、surface→neutral、text→neutral 各階）">
         </a>
-        <figcaption><span class="cap t-body">基礎顏色 Design Token 參考（Figma system 層 variables）· 完整數值見 <code>tokens.json</code></span><a class="figma-btn" href="https://www.figma.com/design/gBdJlyEcW9GNYL4Urf5Zmc/Assignment?node-id=29-336&t=znqStOemTebuqfZd-1&view=variables" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">◈</span>查看 Figma</a></figcaption>
+        <figcaption><span class="cap t-body">基礎顏色 Design Token 參考（Figma system 層 variables）· 完整數值見 <code>tokens.json</code></span><a class="figma-btn" href="https://www.figma.com/design/gBdJlyEcW9GNYL4Urf5Zmc/Assignment?node-id=29-336&t=znqStOemTebuqfZd-1&view=variables" target="_blank" rel="noopener"><img class="ico" src="assets/figma_original.svg" alt="" aria-hidden="true" width="14" height="14">查看 Figma</a></figcaption>
       </figure>
 
-      <p class="sub t-heading" style="margin-bottom:0;">基礎字級系統（摘要，完整數值見 tokens.json）</p>
-      <ul class="plain">
-        <li><span class="marker">—</span><span>Serif（Hero display / Section display / Card heading）+ Sans（Body / Body small / UI label）+ Mono（程式碼用，本次核心畫面用不到，不強制建立）</span></li>
-        <li><span class="marker">—</span><span>全表僅 Regular、Medium 兩階字重，無 Bold —— 層級靠字級大小與 serif/sans 切換，不靠加粗</span></li>
-        <li><span class="marker">—</span><span>Anthropic Serif / Anthropic Sans 為專屬字體，非公開授權，Figma/網站需用替代字體（Serif → Tiempos/Fraunces；Sans → Inter），並在交付說明中註明「視覺相近替代呈現」</span></li>
-      </ul>
-
-      <div class="card" style="margin:20px 0;">
-        <div class="type-row">
-          <span class="spec">hero-display · serif 60/1</span>
-          <span class="t-hero">Aa 開始任務</span>
-        </div>
-        <div class="type-row">
-          <span class="spec">section-display · serif 56/1.14</span>
-          <span class="t-section">Aa 開始任務</span>
-        </div>
-        <div class="type-row">
-          <span class="spec">card-heading · serif 18/1.45</span>
-          <span class="t-heading">Aa 延續工作卡片標題</span>
-        </div>
-        <div class="type-row">
-          <span class="spec">body · sans 16/1.5</span>
-          <span class="t-body">Aa 一般內文，讓使用者更容易開始一個任務。</span>
-        </div>
-        <div class="type-row">
-          <span class="spec">body-small · sans 14/1.43</span>
-          <span class="t-small">Aa 輔助說明文字，補充判斷取捨的理由。</span>
-        </div>
-        <div class="type-row">
-          <span class="spec">ui-label · sans 12/1.33 · 0.08em</span>
-          <span class="t-label">UI Label · Continue Working</span>
-        </div>
-      </div>
-
       <p class="sub t-heading" style="margin-bottom:0;">基礎 Component Library</p>
-      <ul class="plain">
-        <li><span class="marker">—</span><span><strong>List Item</strong>（延續工作卡、chips 選單、Sidebar 清單共用同一元件）：文字 + 右側 icon（chevron 表示直接動作／鉛筆表示需輸入），hover 用 <code>fill-ghost-hover</code>，選中用 <code>fill-ghost-selected</code></span></li>
-        <li><span class="marker">—</span><span><strong>Icon 顏色邏輯：</strong>不建立獨立 icon 色階，直接沿用 Text 分類 token（一般功能性→text-primary/secondary；輔助→text-muted；互動態→text-accent；危險操作→text-danger）</span></li>
-        <li><span class="marker">—</span><span><strong>圓角規則：</strong>大型 shell 32px／卡片 28px／控制項 8px／pill 全圓角</span></li>
-      </ul>
 
       <figure class="fig tall">
         <a class="frame" href="https://www.figma.com/design/gBdJlyEcW9GNYL4Urf5Zmc/Assignment?node-id=29-346&t=znqStOemTebuqfZd-1" target="_blank" rel="noopener">
           <img src="assets/component-library.png" alt="基礎 Component Library：List Item（hover／selected 態）、輸入框、Chat/Cowork 切換、chips、延續工作卡、確定按鈕、icon 色階">
         </a>
-        <figcaption><span class="cap t-body">基礎 Component Library</span><a class="figma-btn" href="https://www.figma.com/design/gBdJlyEcW9GNYL4Urf5Zmc/Assignment?node-id=29-346&t=znqStOemTebuqfZd-1" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">◈</span>查看 Figma</a></figcaption>
+        <figcaption><span class="cap t-body">基礎 Component Library</span><a class="figma-btn" href="https://www.figma.com/design/gBdJlyEcW9GNYL4Urf5Zmc/Assignment?node-id=29-346&t=znqStOemTebuqfZd-1" target="_blank" rel="noopener"><img class="ico" src="assets/figma_original.svg" alt="" aria-hidden="true" width="14" height="14">查看 Figma</a></figcaption>
       </figure>
 
       <h3 class="sub t-heading"><span class="no">3.4</span>資訊架構重構</h3>
@@ -689,51 +613,14 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:40px 0;}
         <a class="frame" href="https://www.figma.com/board/4iiDqI47Yi5BGPhb3rloxF/super8?node-id=20-701&t=2xH6dvYUVHNuIrm4-1" target="_blank" rel="noopener">
           <img src="assets/ia-before-after.png" alt="claude.ai Side Panel 資訊架構 Before / After：Before 扁平無分組且 Projects 重複，After 分為 Workspace 與 Other products 兩群並移除重複入口">
         </a>
-        <figcaption><span class="cap t-body">Before / After claude.ai Side Panel 資訊架構</span><a class="figma-btn" href="https://www.figma.com/board/4iiDqI47Yi5BGPhb3rloxF/super8?node-id=20-701&t=2xH6dvYUVHNuIrm4-1" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">◈</span>查看 Figma</a></figcaption>
+        <figcaption><span class="cap t-body">Before / After claude.ai Side Panel 資訊架構</span><a class="figma-btn" href="https://www.figma.com/board/4iiDqI47Yi5BGPhb3rloxF/super8?node-id=20-701&t=2xH6dvYUVHNuIrm4-1" target="_blank" rel="noopener"><img class="ico" src="assets/figma_original.svg" alt="" aria-hidden="true" width="14" height="14">查看 Figma</a></figcaption>
       </figure>
-      <p class="fig-note t-small">文字版（供對照，正式素材以上方 Figma 連結為準）</p>
-
-      <div class="flow-wrap">
-        <div class="flow before">
-          <span class="t-label">Before（文字版，供建站參考）</span>
-<pre>Sidebar 第一層（樣式一致、無分組）：
-
-  Home / Projects（導覽項）/ Artifacts /
-  Scheduled / Design / Code / Customized
-
-Sidebar 下方另有獨立「Projects」清單區塊
-（重複標籤，功能不同）
-
-Account 選單內另有 Setting
-（與 Customized 功能重疊）</pre>
-        </div>
-        <div class="flow after">
-          <span class="t-label">After</span>
-<pre>Home（獨立於分組外，作為進入點）
-
-── Workspace（跨模式共用）──
-
-  Projects（僅保留清單版本，已涵蓋抵達
-  Project 總覽頁的功能，並支持回訪使用者
-  延續工作目的）
-  Artifacts
-  Scheduled
-
-── Other products（獨立產品線，
-   固定於 Sidebar 底部）──
-
-  Design
-  Code</pre>
-        </div>
-      </div>
-
       <p class="sub t-heading" style="margin-bottom:0;">設計取捨</p>
       <ul class="tradeoff">
         <li><strong>主選單 Projects 入口拿掉，只留清單版本：</strong>清單版本本身已包含抵達 Project 總覽頁的功能，也直接支持「回訪使用者延續工作」這個目的，兩個入口保留其一即可，不需要重複</li>
         <li><strong>Customized 拿掉：</strong>與 Account 選單內的 Setting 功能重複，拿掉以保持 Sidebar 簡潔，不刪減任何實際功能</li>
         <li><strong>Design、Code 固定於 Sidebar 底部：</strong>這兩個產品線本質上是獨立的執行環境，不與 Chat／Cowork 共用底層邏輯，固定在底部、與上方跨模式共用的 Workspace 群組做出明確的視覺區隔</li>
       </ul>
-      <p class="t-small lead">分組線與 <code>text-muted</code> 分組標籤為視覺分群手段，不改動底層資料模型，符合「不需重新設計整個 Claude」的題目邊界。</p>
 
       <h3 class="sub t-heading"><span class="no">3.5</span>成功指標（工具假設為 GA4，如何知道方案上線後有變好）</h3>
 
@@ -783,10 +670,6 @@ Account 選單內另有 Setting
         </table>
       </div>
 
-      <div class="note-card">
-        <span class="t-label">共通原則</span>
-        <p class="t-body">兩方案驗證的都是「使用者行為路徑有沒有變短、變快」，而非主觀好感度；行為資料上線後短期內即可觀察，不需等問卷回收。</p>
-      </div>
     </section>
 
     <!-- ---------- 4. AI Collaboration ---------- -->
@@ -794,7 +677,7 @@ Account 選單內另有 Setting
       <p class="eyebrow t-label">04 — AI Collaboration</p>
       <h2 class="section-title t-section">AI 協作</h2>
 
-      <h3 class="sub t-heading"><span class="no">4.1</span>AI 參與部分（二手資料分析、設計實作建議）</h3>
+      <h3 class="sub t-heading"><span class="no">4.1</span>AI 參與部分</h3>
       <p class="t-body">本次專案中，AI 主要協助兩類工作：二手資料分析與設計實作建議。二手資料分析部分，透過跨模型交叉查詢，快速蒐集業界對 claude.ai「開始任務」體驗的既有討論，作為問題篩選的起點；設計實作建議部分，AI 協助將抽象的設計意圖轉譯為具體可執行的規格——例如將顏色系統拆分為 Primitive／System 兩層、將延續工作卡的元件邏輯收斂為既有 List Item 元件的重用而非另立新元件、將成功指標拆分為「埋事件即可算出」與「需另建路徑分析報表」兩種可行性等級。這些建議加快了從構想到落地規格的速度，但最終是否採用，仍需回到我自己對設計目標與商業脈絡的判斷。</p>
 
       <h3 class="sub t-heading"><span class="no">4.2</span>AI 哪些建議你接受或沒有接受？為什麼？</h3>
@@ -809,10 +692,6 @@ Account 選單內另有 Setting
 
   </main>
 </div>
-
-<footer class="footer">
-  <p class="t-small">Super8 Assignment · Super 8 Studio Product Designer · 顏色與字級數值皆讀取自 <code>tokens.json</code>（light workspace，light-only）。Figma 連結為佔位，待正式檔案替換。</p>
-</footer>
 
 <script>
 /* =====================================================================
