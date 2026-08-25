@@ -377,12 +377,6 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:40px 0;}
         <p class="t-heading" style="margin-top:16px;">「如果要讓使用者更容易開始一個任務，你會改善什麼？」</p>
       </div>
 
-      <p class="lead">呈現方式：作為網站開場區塊，直接引用上述原文，不改寫、不重新詮釋。</p>
-
-      <div class="note-card">
-        <span class="t-label">一句話重述本次鎖定的問題範圍（次要說明，非題目原文）</span>
-        <p class="t-body">「Claude.ai 首頁對『開始任務』這件事，在 returning user 情境與 Sidebar 資訊架構上，存在兩個具體、可收斂處理的落差」</p>
-      </div>
     </section>
 
     <!-- ---------- 2. Problem Framing ---------- -->
@@ -462,11 +456,6 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:40px 0;}
         <li>任務中斷、上下文遺失、回訪使用者沒有接續入口</li>
         <li>多重入口／模式選擇困惑（Chat／Projects／Cowork／Artifacts 該從哪開始）</li>
       </ol>
-
-      <div class="note-card">
-        <span class="t-label">方法論誠實揭露（AI Collaboration 段落會再引用）</span>
-        <p class="t-body">跨模型交叉比對出來的高頻共識，不等於已驗證的真實現象——各模型很可能只是共享同一套訓練資料裡的「AI 產品 UX 通病」經典論述，而非各自獨立驗證過 claude.ai 現況。</p>
-      </div>
 
       <p class="sub t-heading" style="margin-bottom:0;">實際檢驗，逐項比對現況產品</p>
       <ol class="steps">
@@ -678,7 +667,7 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:40px 0;}
       <h2 class="section-title t-section">AI 協作</h2>
 
       <h3 class="sub t-heading"><span class="no">4.1</span>AI 參與部分</h3>
-      <p class="t-body">本次專案中，AI 主要協助兩類工作：二手資料分析與設計實作建議。二手資料分析部分，透過跨模型交叉查詢，快速蒐集業界對 claude.ai「開始任務」體驗的既有討論，作為問題篩選的起點；設計實作建議部分，AI 協助將抽象的設計意圖轉譯為具體可執行的規格——例如將顏色系統拆分為 Primitive／System 兩層、將延續工作卡的元件邏輯收斂為既有 List Item 元件的重用而非另立新元件、將成功指標拆分為「埋事件即可算出」與「需另建路徑分析報表」兩種可行性等級。這些建議加快了從構想到落地規格的速度，但最終是否採用，仍需回到我自己對設計目標與商業脈絡的判斷。</p>
+      <p class="t-body">本次專案中，AI 主要協助兩類工作：二手資料分析與成功指標規劃。二手資料分析部分，透過跨模型交叉查詢，快速蒐集業界對 claude.ai「開始任務」體驗的既有討論，作為問題篩選的起點；成功指標部分，AI 協助將「如何知道方案上線後有變好」這個抽象問題，拆解成可實際落地的量測邏輯——例如將指標分成「埋事件即可算出」與「需另建 GA4 路徑分析報表計算」兩種可行性等級，並個別定義每個指標對應的事件命名與判斷邏輯。這些建議加快了從構想到可執行量測方案的速度，但最終是否採用，仍需回到我自己對設計目標與商業脈絡的判斷。</p>
 
       <h3 class="sub t-heading"><span class="no">4.2</span>AI 哪些建議你接受或沒有接受？為什麼？</h3>
       <p class="t-body">我先依照題目範圍（是否影響「開始一個任務」）與嚴重程度（是否直接影響商業目標，即付費會員轉換率）對蒐集到的使用者痛點進行分類與篩選，最終收斂到四個痛點。接著實際到 claude.ai 逐一測試這四個痛點是否仍然存在，發現 AI 提供的資料有不即時的問題——四個痛點中，有兩個其實已經被 Claude 官方解決（首次使用者引導、prompt 生成）。這說明即便 AI 能大幅提高資料蒐集與分類的效率，設計者仍必須親自做事實查核，不能直接把 AI 的分析結果當作現況依據。</p>
