@@ -403,8 +403,9 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:40px 0;}
           </ul>
         </div>
         <div class="card">
-          <p class="t-heading">二手資料蒐集（Prompt）</p>
-          <p class="t-small">透過主流 AI 模型協助進行二手資料蒐集：</p>
+          <p class="t-heading">二手資料蒐集</p>
+          <p class="t-small lead" style="margin-bottom:14px;">透過主流 AI 模型協助進行二手資料蒐集：</p>
+          <p class="t-small" style="color:var(--text-muted); margin-bottom:4px;">prompt：</p>
           <p class="t-small">針對 Claude.ai 網頁版（desktop web），研究以下產品設計題目：「如果要讓使用者更容易開始一個任務，你會改善什麼？」請透過網路搜尋，找出真實使用者與 UX / Product Design 社群對 Claude.ai「開始一個任務」體驗的主要抱怨與摩擦。</p>
         </div>
       </div>
@@ -470,12 +471,13 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:40px 0;}
         <div class="card">
           <span class="token-pill">問題 1</span>
           <p class="t-heading" style="margin-top:12px;">Chat Interface 沒有將 Project 核心功能——即讓回訪使用者延續工作——體現給使用者</p>
-          <p class="t-small"><strong>為什麼優先：</strong>Project 延續工作的能力本來就存在，只是被埋沒、沒有被凸顯成使用者一眼就能感知的體驗；解法可以很輕量，不需重做整個首頁資訊架構</p>
+          <p class="t-small"><strong>具體現象：</strong>Project 功能本身已經滿足了「回訪使用者延續工作」的需求，但沒有被放在足夠顯眼的位置介紹給使用者。一般使用者可能始終沒有機會接觸到 Project 功能，也就始終沒能因為這個功能而受益、進一步變成高黏著度的使用者。</p>
+          <p class="t-small"><strong>為什麼優先：</strong>Project 延續工作的能力本來就存在，只是被埋沒、沒有被凸顯成使用者一眼就能感知的體驗；解法可以很輕量，不需重做整個首頁資訊架構。</p>
         </div>
         <div class="card">
           <span class="token-pill">問題 2</span>
           <p class="t-heading" style="margin-top:12px;">Side panel 功能繁多且資訊架構複雜，增加使用者認知負荷</p>
-          <p class="t-small"><strong>具體現象：</strong>Projects 重複出現兩種角色；Projects/Artifacts/Scheduled（跨模式共用管理工具）與 Design/Code（獨立產品線）視覺上毫無區隔</p>
+          <p class="t-small"><strong>具體現象：</strong>Design／Cowork／Chat／Code 四大模式理應是同一層級的產品線，但使用者觸發這四個模式時，工作實際發生的位置並不一致：Chat 與 Cowork 直接在 chat interface 裡完成工作；Design 的工作發生在跳轉後的獨立頁面；Code 的工作發生在獨立的雲端執行環境，也被帶離開 claude.ai 的首頁。與其用「較常被使用的模式」去安排資訊層級，我認為針對「工作是否發生在 chat interface」去安排資訊架構更直觀，也更能讓使用者理解 Claude 其實是四大模式並存，且 chat 與 cowork 為主要功能。此外 Projects 跟 customized（settings）也重複出現，增加使用者認知負荷。</p>
           <p class="t-small"><strong>為什麼優先：</strong>改動範圍小（僅視覺分組＋入口整併），不需重新設計整個 Sidebar 資料模型</p>
         </div>
       </div>
