@@ -404,8 +404,8 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:40px 0;}
           <p class="t-heading">一手觀察</p>
           <p class="t-small lead" style="margin-bottom:14px;">實際操作 claude.ai 後的直觀感受</p>
           <ul class="plain">
-            <li><span class="marker">—</span><span>若使用者沒有特定目標任務，一打開網頁版，左側 side panel 功能項目多、視覺份量重，學習成本偏高</span></li>
-            <li><span class="marker">—</span><span>若使用者第一次要使用 Cowork 或 Claude Design 完成特定任務，以目前資訊架構，不容易定位入口</span></li>
+            <li><span class="marker">—</span><span>若使用者沒有特定目標任務，一打開網頁版，左側 side panel 有兩個問題：一是功能項目多，且還分了 Home／Code 兩種層級，缺乏清楚的分類邏輯；二是視覺權重與右側 chat interface 相當接近，使用者容易不知道該從哪裡開始。這兩點都在無形中增加了使用者的認知負荷。</span></li>
+            <li><span class="marker">—</span><span>當前資訊架構把 Chat、Cowork、Design、Code 四大功能的使用者認知層級切得相當破碎，缺乏一致且容易理解的層級安排，使用者難以直覺判斷這四者之間的關係與各自的入口位置。</span></li>
           </ul>
         </div>
         <div class="card">
@@ -470,26 +470,26 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:40px 0;}
 
       <p class="sub t-heading" style="margin-bottom:0;">問題定義</p>
       <p class="t-body" style="margin-top:14px;">痛點 1、2，Claude 已提出解法（引導步驟＋自動產出 prompt），不再是最值得優先處理的問題。</p>
-      <p class="t-body">其他使用者回饋中，如「強迫開新對話造成上下文斷裂」，確實是實際操作產品時也遇到的痛點，但此痛點發生在任務<strong>執行過程中</strong>，而非<strong>開始任務的當下</strong>，與本次題目聚焦的範圍不同，故排除。</p>
       <p class="t-body">因此，鎖定以下兩個問題進行 redesign：</p>
 
       <div class="card-grid two problems">
         <div class="card">
           <span class="token-pill">問題 1</span>
-          <p class="t-heading" style="margin-top:12px;">Chat Interface 沒有將 Project 核心功能——即讓回訪使用者延續工作——體現給使用者</p>
-          <p class="t-small"><strong>具體現象：</strong>Project 功能本身已經滿足了「回訪使用者延續工作」的需求，但沒有被放在足夠顯眼的位置介紹給使用者。一般使用者可能始終沒有機會接觸到 Project 功能，也就始終沒能因為這個功能而受益、進一步變成高黏著度的使用者。</p>
-          <p class="t-small"><strong>為什麼優先：</strong>Project 延續工作的能力本來就存在，只是被埋沒、沒有被凸顯成使用者一眼就能感知的體驗；解法可以很輕量，不需重做整個首頁資訊架構。</p>
+          <p class="t-heading" style="margin-top:12px;">回訪使用者沒有接續入口</p>
+          <p class="t-small"><strong>具體現象：</strong>Project 功能的核心目的之一，就是延續使用者未完成的工作，只是被放在資訊層級複雜的 side panel 裡，沒有被凸顯成使用者一眼就能感知的體驗。</p>
+          <p class="t-small"><strong>為什麼優先：</strong>如果能提升 Projects 功能的使用率，將有效提升使用者的回訪頻率與留存率，進而帶動付費會員轉換率——直接支持商業目標，不只是體驗層面的優化。</p>
         </div>
         <div class="card">
           <span class="token-pill">問題 2</span>
           <p class="t-heading" style="margin-top:12px;">Side panel 功能繁多且資訊架構複雜，增加使用者認知負荷</p>
-          <p class="t-small"><strong>具體現象：</strong>Design／Cowork／Chat／Code 四大模式理應是同一層級的產品線，但使用者觸發這四個模式時，工作實際發生的位置並不一致：Chat 與 Cowork 直接在 chat interface 裡完成工作；Design 的工作發生在跳轉後的獨立頁面；Code 的工作發生在獨立的雲端執行環境，也被帶離開 claude.ai 的首頁。與其用「較常被使用的模式」去安排資訊層級，我認為針對「工作是否發生在 chat interface」去安排資訊架構更直觀，也更能讓使用者理解 Claude 其實是四大模式並存，且 chat 與 cowork 為主要功能。此外 Projects 跟 customized（settings）也重複出現，增加使用者認知負荷。</p>
-          <p class="t-small"><strong>為什麼優先：</strong>改動範圍小（僅視覺分組＋入口整併），卻能有效提升使用者對產品的功能理解</p>
+          <p class="t-small"><strong>具體現象：</strong>具體現象有二：一是左側 side panel 與右側 chat interface 視覺層級相當接近，使用者難以直覺判斷該從哪裡開始工作；二是 Design／Cowork／Chat／Code 四大功能之間的資訊層級安排邏輯並不一致。</p>
+          <p class="t-small"><strong>為什麼優先：</strong>理順資訊層級能降低使用者找到 Project 入口的門檻，與問題 1（延續工作卡）分別從不同情境提升 Project 的使用率——問題 1 服務已經有近期紀錄的使用者，問題 2 服務需要主動尋找的使用者。兩者加總，有助於提升使用者的回訪頻率與留存率，進而帶動付費會員轉換率，直接支持商業目標。</p>
         </div>
       </div>
 
       <p class="sub t-heading" style="margin-bottom:0;">觀察到但選擇不在這次解決的問題</p>
       <ol class="steps">
+        <li>「強迫開新對話造成上下文斷裂」，確實是實際操作產品時也觀察到的真實痛點。但此痛點發生在任務執行過程中，而非開始任務的當下，與本次題目聚焦的範圍不同，屬於觀察到但選擇不在這次解決的問題，故排除。</li>
         <li>新使用者的冷啟動個人化引導，以及自由輸入自動生成 prompt 的功能，都是實際觀察到、真實存在的痛點。但這兩者要做到位，各自需要額外的提問流程或 AI 生成往返時間，投入成本相對於本次優先聚焦的「凸顯 Project 核心價值」而言，效益比較低，故冷啟動引導與自動生成 prompt 留待後續迭代評估。</li>
         <li>把 Chat/Cowork 從 composer 內部提升到 Sidebar 外部第一層，是我在過程中認真考慮過的另一個方向，也確實能讓「工作發生位置」的邏輯更徹底呈現，但這個改動會製造「先理解 chat 跟 cowork 模式的差異才開始工作」的新摩擦，與本題核心目標（更容易開始）相牴觸；相較之下，維持現有分組範圍、聚焦資訊架構重整，能用更小的改動達成更直接的效益，因此這次選擇不做。</li>
       </ol>
