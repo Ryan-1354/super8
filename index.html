@@ -21,6 +21,7 @@
   --neutral-0:#FFFFFF;  --neutral-50:#FAF9F5; --neutral-100:#F2F0EA;
   --neutral-150:#ECEAE4;--neutral-300:#DEDCD1;--neutral-400:#949390;
   --neutral-600:#63625F;--neutral-900:#141413;--neutral-950:#0F0C08;
+  --primary-fill:#0B0B0B; --primary-hover:#000000;
   --blue-soft:#74ABE2;  --blue-fill:#2C84DB;  --blue-hover:#256ABF;
   --green-tint:#F2F8EA; --green-fill:#4A7B00;
   --red-tint:#F8ECEC;   --red-fill:#B93535;
@@ -36,8 +37,8 @@
   --text-primary:var(--neutral-900);
   --text-secondary:var(--neutral-600);
   --text-muted:var(--neutral-400);
-  --fill-accent:var(--blue-fill);
-  --fill-accent-hover:var(--blue-hover);
+  --fill-accent:var(--primary-fill);
+  --fill-accent-hover:var(--primary-hover);
   --text-accent:var(--blue-fill);
   --bg-accent-soft:var(--blue-soft);
   --bg-success:var(--green-tint);
@@ -545,28 +546,35 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:40px 0;}
         <p class="t-body" style="margin-bottom:0;">以下素材已附上預覽，點擊預覽圖或「查看 Figma」按鈕可開啟 Figma 檔案查看完整內容。</p>
       </div>
 
-      <p class="sub t-heading" style="margin-bottom:0;">Before / After Flow Chart</p>
-      <figure class="fig tall">
-        <a class="frame" href="https://www.figma.com/board/4iiDqI47Yi5BGPhb3rloxF/super8?node-id=20-701&t=2xH6dvYUVHNuIrm4-1" target="_blank" rel="noopener">
-          <img src="assets/flow-before-after.png" alt="加入延續工作卡的 Before / After 流程圖：Before 需多層點擊尋找對話，After 由首頁延續工作卡片直接接續">
-        </a>
-        <figcaption><span class="cap t-body">加入延續工作卡 · Before / After Flow Chart</span><a class="figma-btn" href="https://www.figma.com/board/4iiDqI47Yi5BGPhb3rloxF/super8?node-id=20-701&t=2xH6dvYUVHNuIrm4-1" target="_blank" rel="noopener"><img class="ico" src="assets/figma_original.svg" alt="" aria-hidden="true" width="14" height="14">查看 Figma</a></figcaption>
-      </figure>
-
-      <p class="sub t-heading" style="margin-bottom:0;">設計取捨</p>
-      <ul class="tradeoff">
-        <li><strong>為什麼設定 48 小時？</strong>48 小時並非精確科學數字，是<strong>待驗證的初始假設起始值</strong>。設定門檻的目的是篩掉太舊、與「馬上要接續」無關的對話；48 小時涵蓋「今天回來」與「隔一天回來」兩種最常見的接續情境。上線後應以實際使用資料做 A/B 測試，重新校準這個數字。</li>
-        <li><strong>為什麼用時間排序、不用語意判斷？</strong>若改用語意判斷「這個任務是否已完成」，代表每次使用者打開首頁，系統都要重新爬過所有對話並跑一次推論——每一次都是一次額外的網路請求與推論時間，與「更容易開始一個任務」這個前提直接相違背。</li>
-        <li><strong>為什麼不分一般 Chat 還是 Project 內的 Chat？</strong>不預先假設或預測使用者會用哪種方式完成任務（一般聊天或是 Project 內聊天），統一用最後活動時間排序，保留設計彈性，也保留日後回測與調整的空間。</li>
-      </ul>
-
-      <p class="sub t-heading" style="margin-bottom:0;">首頁精稿（延續工作卡片）</p>
+      <p class="sub t-heading" style="margin-bottom:0;">延續工作卡片 UI</p>
       <figure class="fig">
         <a class="frame" href="https://www.figma.com/design/gBdJlyEcW9GNYL4Urf5Zmc/Assignment?node-id=49-1840&t=znqStOemTebuqfZd-1" target="_blank" rel="noopener">
           <img src="assets/core-ui.png" alt="claude.ai 首頁精稿：Sidebar 分組整併，主畫面上方加入「延續工作」卡片列，下方保留通用 chips">
         </a>
-        <figcaption><span class="cap t-body">首頁精稿 · core UI</span><a class="figma-btn" href="https://www.figma.com/design/gBdJlyEcW9GNYL4Urf5Zmc/Assignment?node-id=49-1840&t=znqStOemTebuqfZd-1" target="_blank" rel="noopener"><img class="ico" src="assets/figma_original.svg" alt="" aria-hidden="true" width="14" height="14">查看 Figma</a></figcaption>
+        <figcaption><span class="cap t-body">延續工作卡片精稿</span><a class="figma-btn" href="https://www.figma.com/design/gBdJlyEcW9GNYL4Urf5Zmc/Assignment?node-id=49-1840&t=znqStOemTebuqfZd-1" target="_blank" rel="noopener"><img class="ico" src="assets/figma_original.svg" alt="" aria-hidden="true" width="14" height="14">查看 Figma</a></figcaption>
       </figure>
+      <ul class="tradeoff">
+        <li><strong>視覺引導</strong><br>讓 chat interface 與 side panel 之間有明顯的顏色落差，透過 chat composer 較高明度的背景色，將使用者的視覺自然引導到「該從這裡開始工作」。</li>
+        <li><strong>延續工作卡片</strong><br>Chat composer 上方加入三張延續工作卡片，提供快速延續工作的入口，點擊後直接前往對應的對話。</li>
+        <li><strong>情境式引導</strong><br>三張卡片下方顯示 Project 功能引導文案；若卡片中已包含屬於 Project 的對話，則不顯示，讓引導文案只在真正需要的情境下出現。</li>
+      </ul>
+
+      <p class="sub t-heading" style="margin-bottom:0;">Before / After Flow Chart</p>
+      <figure class="fig tall">
+        <a class="frame" href="https://www.figma.com/board/4iiDqI47Yi5BGPhb3rloxF/super8?node-id=20-702&t=uwOnSeeDaUhTME2b-1" target="_blank" rel="noopener">
+          <img src="assets/flow-before-after.png" alt="加入延續工作卡的 Before / After 流程圖：Before 需多層點擊尋找對話，After 由首頁延續工作卡片直接接續">
+        </a>
+        <figcaption><span class="cap t-body">迭代前後使用者進入 Project 功能流程</span><a class="figma-btn" href="https://www.figma.com/board/4iiDqI47Yi5BGPhb3rloxF/super8?node-id=20-702&t=uwOnSeeDaUhTME2b-1" target="_blank" rel="noopener"><img class="ico" src="assets/figma_original.svg" alt="" aria-hidden="true" width="14" height="14">查看 Figma</a></figcaption>
+      </figure>
+
+      <p class="sub t-heading" style="margin-bottom:0;">設計決策</p>
+      <ul class="tradeoff">
+        <li><strong>建立情境，再引導使用者接觸功能</strong><br>現有設計雖然已經有一步進入 Project 內任一對話的路徑——左側 side panel 第一層即會展開該 Project 底下所有對話——但並沒有把 Project 這個核心功能放在適當的情境下呈現給使用者。如果使用者不曾主動探索或理解這個功能，接觸到它的機會其實不高。因此，我的設計順序是先建立「快速延續工作」的情境，再讓使用者在這個情境裡自然接觸到 Project 功能：具體做法是在 chat interface 放入延續工作卡片，建立起「快速回顧近期工作」的情境，接著在同一區塊加入引導文案與按鈕，順勢引導使用者進一步認識並使用 Project 功能。</li>
+        <li><strong>Project 引導文案的顯示時機</strong><br>若卡片中已經有任一則屬於 Project 的對話，代表使用者已經知道 Project 這個功能，引導文案不顯示。這個判斷避免對已經熟悉 Project 的使用者重複教育，也讓這個引導元件只在真正有效的情境（使用者尚未接觸過 Project）下出現，不會變成每次都存在、逐漸被使用者忽略的固定裝飾。</li>
+        <li><strong>為什麼設定 48 小時？</strong><br>48 小時並非精確科學數字，是<strong>待驗證的初始假設起始值</strong>。設定門檻的目的是篩掉太舊、與「馬上要接續」無關的對話；48 小時涵蓋「今天回來」與「隔一天回來」兩種最常見的接續情境。上線後應以實際使用資料做 A/B 測試，重新校準這個數字。</li>
+        <li><strong>為什麼用時間排序、不用語意判斷？</strong><br>若改用語意判斷「這個任務是否已完成」，代表每次使用者打開首頁，系統都要重新爬過所有對話並跑一次推論——每一次都是一次額外的網路請求與推論時間，與「更容易開始一個任務」這個前提直接相違背。</li>
+        <li><strong>為什麼不只顯示 Project 內的 Chat？</strong><br>不預先假設或預測使用者會用哪種方式完成任務（一般聊天或是 Project 內聊天），統一用最後活動時間排序，保留設計彈性，也保留日後回測與調整的空間。</li>
+      </ul>
 
       <h3 class="sub t-heading"><span class="no">3.4</span>資訊架構重構</h3>
       <div class="note-card">
@@ -580,13 +588,20 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:40px 0;}
         <figcaption><span class="cap t-body">Before / After claude.ai Side Panel 資訊架構</span><a class="figma-btn" href="https://www.figma.com/board/4iiDqI47Yi5BGPhb3rloxF/super8?node-id=20-701&t=2xH6dvYUVHNuIrm4-1" target="_blank" rel="noopener"><img class="ico" src="assets/figma_original.svg" alt="" aria-hidden="true" width="14" height="14">查看 Figma</a></figcaption>
       </figure>
 
+      <p class="sub t-heading" style="margin-bottom:0;">設計決策</p>
+      <ul class="tradeoff">
+        <li><strong>扁平化資訊架構</strong><br>原本兩層架構（Home／Code 各自獨立、各帶一套子選單），改為單一層的扁平架構——預設即是 Chat／Cowork，並將 Design、Code 的入口放進 Sidebar，完整呈現四大功能並存的結構。同時，把「工作實際不發生在 chat interface」的功能（Design、Code）獨立出來，與 Chat／Cowork 做出區隔。</li>
+        <li><strong>釐清操作功能的歸屬</strong><br>在單一層架構下，New、Artifact、Scheduled 更明確地隸屬於 Chat／Cowork 的操作功能，讓 Sidebar 與 chat interface 之間的關係更清楚、更容易理解。</li>
+        <li><strong>視覺分區呈現三大群組</strong><br>在單層架構下，透過視覺間隔明確劃分出三個群組——操作功能（New、Artifact、Scheduled）、專案與一般聊天記錄列表、其他功能（Design、Code、Account menu）。</li>
+      </ul>
+
       <figure class="fig tall">
         <a class="frame" href="https://www.figma.com/design/gBdJlyEcW9GNYL4Urf5Zmc/Assignment?node-id=49-1840&t=znqStOemTebuqfZd-1" target="_blank" rel="noopener">
           <img src="assets/side-panel-before-after.png" alt="claude.ai Side Panel Redesign Mockup Before / After：Before 為現況扁平 Sidebar，After 加入 Projects/Chats and tasks 分組與 Home/Code 分頁的重整版面">
         </a>
         <figcaption><span class="cap t-body">Side Panel Redesign Mockup · Before / After</span><a class="figma-btn" href="https://www.figma.com/design/gBdJlyEcW9GNYL4Urf5Zmc/Assignment?node-id=49-1840&t=znqStOemTebuqfZd-1" target="_blank" rel="noopener"><img class="ico" src="assets/figma_original.svg" alt="" aria-hidden="true" width="14" height="14">查看 Figma</a></figcaption>
       </figure>
-      <p class="sub t-heading" style="margin-bottom:0;">設計取捨</p>
+      <p class="sub t-heading" style="margin-bottom:0;">設計決策</p>
       <ul class="tradeoff">
         <li><strong>主選單 Projects 入口拿掉，只留清單版本：</strong>清單版本本身已包含抵達 Project 總覽頁的功能，也直接支持「回訪使用者延續工作」這個目的，兩個入口保留其一即可，不需要重複</li>
         <li><strong>Customized 拿掉：</strong>與 Account 選單內的 Setting 功能重複，拿掉以保持 Sidebar 簡潔，不刪減任何實際功能</li>
