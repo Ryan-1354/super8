@@ -166,6 +166,7 @@ p{margin:0 0 16px; max-width:70ch;}
 .card-grid{display:grid; gap:16px; margin:20px 0;}
 .card-grid.two{grid-template-columns:repeat(2,minmax(0,1fr));}
 .card .t-heading{margin:0 0 10px;}
+.card p{max-width:none;}
 .card p:last-child{margin-bottom:0;}
 /* 問題 1／2 卡片：段落間距加大，降低閱讀疲勞 */
 .problems .card p{margin-bottom:22px; line-height:1.6;}
@@ -494,12 +495,12 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:40px 0;}
       </ol>
 
       <h3 class="sub t-heading"><span class="no">2.3</span>競品分析</h3>
-      <p class="t-body"><strong>分析項目：</strong>回訪使用者任務延續設計、資訊架構安排<br><strong>參考競品：</strong>ChatGPT、Gemini、Grok</p>
+      <p class="t-body"><strong>分析項目：</strong>回訪使用者任務延續設計、資訊架構安排　<strong>參考競品：</strong>ChatGPT、Gemini、Grok</p>
 
+      <p class="sub t-heading" style="margin-bottom:0;">回訪使用者延續工作</p>
       <div class="card-grid">
         <div class="card">
-          <p class="t-heading">回訪使用者延續工作</p>
-          <p class="t-small">ChatGPT、Grok、Gemini 皆有對標 Claude Project 的延續工作設計，但都沒有讓使用者更直接感受到「快速延續先前工作」——延續機制存在，但沒有被凸顯成使用者一眼就能感知的體驗。</p>
+          <p class="t-small">ChatGPT、Grok、Gemini 皆有對標 Claude Project 的延續工作設計，分別是 Projects、Projects、Notebook，但也都沒有讓使用者更直接感受到「快速延續先前工作」——延續機制存在，但核心價值跟功能可見度都沒有被更明顯地呈現給使用者。</p>
         </div>
       </div>
 
@@ -507,15 +508,15 @@ hr.rule{border:none; border-top:1px solid var(--border); margin:40px 0;}
       <div class="card-grid">
         <div class="card">
           <p class="t-heading">ChatGPT</p>
-          <p class="t-small">Chat 與 Work 作為 primary navigation，Work 模式僅開放付費使用者；Codex 入口雖放在 side panel，但屬於獨立產品。</p>
+          <p class="t-small">Chat 與 Work 作為 primary navigation；Codex 為獨立產品，點擊後跳轉離開，入口放在 side panel 主選單最後一個。</p>
         </div>
         <div class="card">
           <p class="t-heading">Gemini</p>
-          <p class="t-small">扁平資訊架構，所有產品線與相關功能入口都放在 side panel 第一層；本身另有 CLI（Gemini CLI）與繪圖工具（Google Stitch），但皆為獨立產品，未整合進 Gemini 本體。</p>
+          <p class="t-small">扁平資訊架構，所有產品線與相關功能入口都放在 side panel 主選單；本身另有 CLI（Gemini CLI）與繪圖工具（Google Stitch），但皆為獨立產品，未將功能入口放入 Gemini。</p>
         </div>
         <div class="card">
           <p class="t-heading">Grok</p>
-          <p class="t-small">兩層資訊架構，聊天、製圖、自動化等功能放在 side panel；Build 模式（對標 Cowork）則透過輸入框模式切換、以任務目的引導使用者，但 Grok Build 同樣是獨立產品。</p>
+          <p class="t-small">兩層資訊架構，聊天、製圖、自動化等功能放在 side panel 主選單；Build 模式（對標 Cowork）則透過 chat composer 切換、以任務目的引導使用者。</p>
         </div>
       </div>
     </section>
